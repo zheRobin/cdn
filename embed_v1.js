@@ -20,7 +20,7 @@
       iframe.setAttribute(
         "src",
         `${
-          this.getAttribute("host") || "http://localhost:3000/"
+          this.getAttribute("host") || "https://app.alitahealth.ai/"
         }/agent/${AppId}`
       );
       iframe.setAttribute("width", this.getAttribute("width") || "100%");
@@ -49,7 +49,7 @@
       // Add a listener to the iframe to listen for messages
       window.addEventListener("message", (event) => {
         // Assumes iframe is in scope, consider binding iframe from constructor scope if needed
-        const adjustIframeSize = (width, height) => {
+        const adjustIframeSize = (width, height, ) => {
           let newWidth = width;
           let newHeight = height;
       
@@ -71,6 +71,7 @@
       
           iframe.style.width = newWidth;
           iframe.style.height = newHeight;
+          console.log("-------------",iframe.style)
         };
       
         if (event.data.type === "openApp") {
