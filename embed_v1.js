@@ -71,7 +71,6 @@
       
           iframe.style.width = newWidth;
           iframe.style.height = newHeight;
-          console.log("-------------",iframe.style)
         };
       
         if (event.data.type === "openApp") {
